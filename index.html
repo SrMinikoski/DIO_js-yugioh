@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIO_js-yugioh</title>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+
 </head>
+
 <body>
-    
+    <div class="bg-video">
+        <video autoplay loop muted>
+            <source src="src/assets/video/yugi.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="container_left framed-golden-2">
+            <div class="score-box frame">
+                <span id="score-point">Win: 00 | Lose: 00</span>
+            </div>
+            <div class="menu-avatar">
+                <img src="" alt="" id="card-img">
+            </div>
+            <div class="card-details frame">
+                <p id="card-name">X</p>
+                <p id="card-type">X</p>
+            </div>
+        </div>
+        <div class="container_right">
+            <div class="cardbox-container">
+                <div class="card-box framed" id="computer-cards"></div>
+                <div class="card-vs">
+
+                    <div class="vs-top">
+
+                        <div class="card-infield"><img src="" alt="" id="player-field-card" height="180px"
+                                width="125px"></div>
+
+                        <img src="src/assets/icons/millenium2.png" alt="Olho" height="100px">
+
+                        <div class="card-infield"><img src="" alt="" id="computer-field-card" height="180px"
+                                width="125px"></div>
+
+                    </div> <!--vs-top-->
+
+
+                    <div class="vs-bottom">
+
+                        <button id="next-duel" class="rpgui-button" onclick="resetDuel()">Win!</button>
+
+                    </div><!--vs-bottom-->
+
+                </div><!--card-vs-->
+                <div class="card-box framed" id="player-cards"></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
+<script src="src/scripts/engine.js"></script>
