@@ -1,3 +1,15 @@
+body{
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover{
+cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
 .bg-video {
     position: absolute;
     z-index: -1;
@@ -91,6 +103,7 @@
     height: 11.2rem;
     border: 1px solid #fff;
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.205);
 }
 
 .score-box {

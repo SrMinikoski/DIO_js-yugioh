@@ -92,6 +92,10 @@ async function setCardsField(cardId) {
     state.fieldCards.playerCard.src = cardData[cardId].img;
     state.fieldCards.computerCard.src = cardData[computerCardId].img;
 
+    state.cardSprites.avatar.src = "";
+    state.cardSprites.name.innerText = "";
+    state.cardSprites.type.innerText = "";
+
     let duelResult = checkDuelResult(cardId, computerCardId);
 
     await updateScore();
@@ -170,12 +174,19 @@ async function drawCards(cardNumbers, fieldSide) {
 function init() {
     drawCards(5, playerSides.player1);
     drawCards(5, playerSides.computer);
+    state.fieldCards.playerCard.style.display = "none";
+    state.fieldCards.computerCard.style.display = "none";
+
+    const bgm = document.getElementById("bgm")
+    bgm.volume = 0.05;
+    bgm.play()
 }
 
 
 //Audio
 async function playAudio(status) {
     const audio = new Audio(`./src/assets/audios/${status}.wav`);
+    audio.volume = 0.2;
     audio.play();
 }
 
